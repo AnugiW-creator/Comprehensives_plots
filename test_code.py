@@ -68,3 +68,20 @@ plt.hist(b0,bins=500, label="JPsi")
 plt.legend()
 plt.show()
 
+#%%
+# Pi
+xcolumn = table['Pi_PX']
+ycolumn = table['Pi_PY']
+zcolumn = table['Pi_PZ']
+
+ # For loop to Calculate average momentum
+mom = []
+for i in range(col_no):
+    xmom = xcolumn[i]
+    ymom = ycolumn[i]
+    zmom = zcolumn[i]
+    print(zmom)
+    tot_mom = np.sqrt((xmom**2)+(ymom**2)+(zmom**2))
+    mom.append(tot_mom)
+    
+plt.hist(mom, bins=500, label='Pi momentum')
